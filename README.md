@@ -5,7 +5,7 @@
 ## Install
 
 ```
-$ npm install --save jest-environment-jsdom-external-scripts
+$ npm install --save-dev @mediaeventservices/jest-environment-jsdom-external-scripts
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ In `package.json`:
 
 ```
 "scripts": {
-  "test": "jest prefix --env jest-environment-jsdom-external-scripts"
+  "test": "jest prefix --env @mediaeventservices/jest-environment-jsdom-external-scripts"
 },
 ```
 ## Motivation
