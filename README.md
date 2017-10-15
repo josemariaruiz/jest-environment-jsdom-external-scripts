@@ -1,40 +1,40 @@
-# jest-environment-jsdom-latest
+# jest-environment-jsdom-external-scripts
 
-> Jest environment to use the latest jsdom API and features
+>  A Jest environment which loads and runs external scripts
 
 ## Install
 
 ```
-$ npm install --save jest-environment-jsdom-latest
+$ npm install --save jest-environment-jsdom-external-scripts
 ```
-
 
 ## Usage
 
-In `index.spec.js` or whatever:
+In `package.json`:
 
-```js
-/**
- * @jest-environment jsdom-latest
- */
-
-test('use the latest jsdom features in this test file', () => {
-  const element = document.createElement('div');
-  expect(element).not.toBeNull();
-});
 ```
-
+"scripts": {
+  "test": "jest prefix --env jest-environment-jsdom-external-scripts"
+},
+```
 ## Motivation
 
-As of v10, [jsdom](https://github.com/tmpvar/jsdom#jsdom) has a new API and some cool new features. The downside is that now it requires a Node version >= 6.
+Loading and execution of external scripts is not enabled by default in `JSDom`,
+and `Jest` [currently does not expose a way to control this setting](https://github.com/facebook/jest/issues/2460).
 
-As stated in the `Jest` documentation ([here](http://facebook.github.io/jest/docs/en/troubleshooting.html#compatibility-issues)), the minimum supported Node version is v4.0.0.
-
-This package helps you if you are running on Node >= 6 and want to use the latest JSDOM features. It will be deprecated when `Jest` drops Node 4 and Node 5 support.
+This environment adds the following two `JSDom` config options on initialization:
+{
+    runScripts: "dangerously",
+    resources: "usable"
+}
 
 The build script is as close as possible from the one of Facebook's [Jest repo](https://github.com/facebook/jest).
-More on Jest environments: [http://facebook.github.io/jest/docs/configuration.html#testenvironment-string](http://facebook.github.io/jest/docs/configuration.html#testenvironment-string)
+More on Jest environments: [http://facebook.github.io/jest/docs/configuration.html#testenvironment-string](http://facebook.github.io/jest/docs/configuration.html#testenvironment-string
+
+## Credits
+
+Based on [jest-environment-jsdom-latest](https://github.com/dmnsgn/jest-environment-jsdom-latest) by [Damien Seguin](https://github.com/dmnsgn)
 
 ## License
 
-MIT © [Damien Seguin](https://github.com/dmnsgn)
+MIT © [MediaEvent Services GmbH & Co. KG](https://github.com/mes), originally [Damien Seguin](https://github.com/dmnsgn)
