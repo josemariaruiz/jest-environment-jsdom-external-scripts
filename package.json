@@ -1,5 +1,5 @@
 {
-  "name": "jest-environment-jsdom-external-scripts",
+  "name": "@mediaeventservices/jest-environment-jsdom-external-scripts",
   "version": "21.2.1",
   "repository": {
     "type": "git",
@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "main": "build/index.js",
-  "scripts" : {
+  "scripts": {
     "build": "node ./scripts/build.js",
     "prepublishOnly": "npm run build"
   },
@@ -42,5 +42,7 @@
     "rollup-plugin-node-globals": "^1.1.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "string-length": "^2.0.0"
-  }
+  },
+  "description": ">  A Jest environment which loads and runs external scripts",
+  "author": "Christian Becker"
 }
