@@ -34,9 +34,9 @@ class JSDOMEnvironmentExternalScripts {
           ProcessExternalResources: ["script", "iframe"],
       }
       // v10 (future):
-      //@see https://github.com/tmpvar/jsdom#customizing-jsdom
-      //runScripts: 'dangerously',
-      //resources: 'usable',
+      // @see https://github.com/tmpvar/jsdom#customizing-jsdom
+      runScripts: 'dangerously',
+      resources: 'usable',
       /* UPDATE end */
     });
     const window = this.document.defaultView;
