@@ -3,7 +3,7 @@
   "version": "21.2.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mes//jest-environment-jsdom-external-scripts.git"
+    "url": "https://github.com/josemariaruiz/jest-environment-jsdom-external-scripts.git"
   },
   "license": "MIT",
   "main": "build/index.js",
